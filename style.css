@@ -1,0 +1,369 @@
+:root {
+  --primary-clr-100: rgb(255, 255, 255);
+  --primary-clr-500: rgb(108, 10, 108);
+  --primary-clr-600: rgb(17, 17, 107);
+  --primary-clr-700: rgb(0, 0, 0);
+  --primary-clr-800: rgb(20, 20, 63);
+
+  --accent-clr-100: rgb(245, 222, 179);
+
+  --overlay-clr-100: rgba(255, 255, 255, 0.2);
+
+  --btn-cancel-clr: rgb(203, 12, 12);
+  --btn-submit-clr: rgb(26, 106, 26);
+
+  --fs-100: 1rem;
+  --fs-200: 1.2rem;
+  --fs-300: 1.5rem;
+  --fs-400: 2rem;
+  --fs-500: 2.5rem;
+  --fs-600: 3rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@media (max-width: 299px) {
+  html {
+    font-size: 10px;
+  }
+}
+/* 
+html {
+  font-size: 16px;
+} */
+
+body {
+  font-family: cursive;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+button {
+  outline: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background: var(--accent-clr-100);
+  display: grid;
+  place-items: center;
+}
+
+main .container {
+  width: 100%;
+  max-width: 680px;
+  position: relative;
+}
+
+header {
+  width: 100%;
+  max-width: 680px;
+  height: 10%;
+  top: 0;
+  position: fixed;
+  z-index: 9;
+  background: var(--primary-clr-600);
+  padding: 2em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-toggle {
+  background: transparent;
+  font-size: var(--fs-300);
+  color: var(--primary-clr-100);
+}
+
+.notify-btn {
+  background: transparent;
+  font-size: var(--fs-300);
+}
+
+header .logo {
+  position: absolute;
+  top: 25%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo h3 {
+  color: var(--primary-clr-100);
+  font-size: var(--fs-400);
+  font-weight: 700;
+  text-align: center;
+}
+
+.primary-nav .nav-links {
+  display: flex;
+  flex-flow: column;
+  background: var(--primary-clr-800);
+  width: 70%;
+  max-width: 400px;
+  height: 50vh;
+  padding: 5em 1em;
+  position: absolute;
+  top: 5.25em;
+  left: 0;
+  opacity: 0;
+  z-index: -100 !important;
+  visibility: hidden;
+  transition: opacity 1000ms ease-in;
+}
+
+.nav-links li {
+  margin-block: 2em;
+}
+
+.nav-links li a {
+  color: var(--primary-clr-100);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: var(--primary-clr-500);
+}
+
+.show-links {
+  opacity: 1 !important;
+  z-index: 20;
+  visibility: visible !important;
+  transition: opacity 1000ms ease-in;
+}
+
+/* hero styling */
+
+.hero {
+  background: var(--primary-clr-500);
+  color: var(--primary-clr-100);
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 5em;
+  padding: 1em 2em 4em 2rem;
+  position: relative;
+}
+
+.todo-items .todo-item {
+  margin-bottom: 1em;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-block: 0.5em;
+  border-bottom: 1px solid var(--primary-clr-600);
+}
+
+.todo-item .todo-title {
+  margin-bottom: 0.5em;
+}
+
+.todo-title h3 {
+  font-size: var(--fs-400);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.todo-item .todo-context {
+  margin-bottom: 0.5em;
+}
+
+.todo-context p {
+  font-size: var(--fs-100);
+  font-weight: 500;
+}
+
+.todo-item .todo-created {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-button .trash-todo {
+  background: transparent;
+  padding: 0.3em;
+  font-size: var(--fs-100);
+  font-weight: 500;
+  color: var(--btn-cancel-clr);
+}
+
+.todo-button .trash-todo span {
+  font-size: var(--fs-200);
+  color: var(--primary-clr-100);
+}
+
+.todo-created .date-create {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary-clr-100);
+}
+
+/* overlay styling */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 680px;
+  height: 100%;
+  background: var(--overlay-clr-100);
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  z-index: -10;
+  transition: all 500ms ease-in;
+}
+
+.open-overlay {
+  visibility: visible;
+  z-index: 101;
+  transition: all 500ms ease-in;
+}
+
+.overlay .form-containaer {
+  background: var(--accent-clr-100);
+  position: relative;
+  width: 70%;
+  height: 50vh;
+  padding: 5em 1em;
+  border-radius: 1em;
+}
+
+.form-containaer .form-overlay {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.form-containaer .close-overlay {
+  background: transparent;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  color: var(--btn-cancel-clr);
+  font-size: var(--fs-400);
+  font-weight: 700;
+}
+
+.form-overlay .overlay-input {
+  width: 90%;
+  padding: 1em;
+  border-radius: 0.5em;
+  font-size: var(--fs-100);
+  font-weight: 500;
+  color: var(--primary-clr-700);
+  outline: none;
+  border: 1px solid var(--primary-clr-600);
+  margin-bottom: 1em;
+}
+
+.form-overlay .overlay-text {
+  width: 90%;
+  padding: 1em;
+  border-radius: 0.5em;
+  font-size: var(--fs-100);
+  font-weight: 500;
+  color: var(--primary-clr-700);
+  outline: none;
+  resize: none;
+  border: 1px solid var(--primary-clr-600);
+  margin-bottom: 1em;
+}
+
+.form-overlay .todo-controls {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-controls .cancel-btn {
+  padding: 0.4em 1em;
+  background: transparent;
+  font-size: var(--fs-100);
+  color: var(--btn-cancel-clr);
+  border: 1px solid var(--btn-cancel-clr);
+  border-radius: 5em;
+  transition: all 250ms ease-out;
+}
+
+.todo-controls .cancel-btn:hover {
+  padding: 0.4em 1em;
+  background: var(--btn-cancel-clr);
+  font-size: var(--fs-100);
+  color: var(--primary-clr-100);
+  border: transparent;
+  border-radius: 5em;
+  transition: all 250ms ease-out;
+}
+
+.todo-controls .submit-btn {
+  padding: 0.4em 1em;
+  background: transparent;
+  font-size: var(--fs-100);
+  color: var(--btn-submit-clr);
+  border: 1px solid var(--btn-submit-clr);
+  border-radius: 5em;
+  transition: all 250ms ease-out;
+}
+
+.todo-controls .submit-btn:hover {
+  padding: 0.4em 1em;
+  background: var(--btn-submit-clr);
+  font-size: var(--fs-100);
+  color: var(--primary-clr-100);
+  border: transparent;
+  border-radius: 5em;
+  transition: all 250ms ease-out;
+}
+
+/* footer styling */
+
+footer {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 680px;
+  height: 4em;
+  position: fixed;
+  bottom: 0;
+  background: var(--primary-clr-600);
+  z-index: 9;
+}
+
+footer .add-btn {
+  background: var(--primary-clr-800);
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  bottom: 1em;
+  font-size: var(--fs-200);
+  color: var(--primary-clr-100);
+  border-radius: 50%;
+  border: 5px solid var(--primary-clr-500);
+  z-index: 12;
+}

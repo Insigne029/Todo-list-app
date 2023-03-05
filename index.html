@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO-APP</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/574f41bf74.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <header>
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <nav class="primary-nav">
+            <ul class="nav-links">
+              <li><a href="#">TODOS</a></li>
+              <li><a href="#">REMINDER</a></li>
+              <li><a href="#">ALARM</a></li>
+            </ul>
+          </nav>
+          <div class="logo">
+            <h3>TODO-APP</h3>
+          </div>
+
+          <div class="notify">
+            <button class="notify-btn">🔔</button>
+          </div>
+        </header>
+        <div class="hero">
+          <div class="todo-items">
+            <div class="todo-item">
+              <div class="todo-title">
+                <h3>your task goes in the title</h3>
+              </div>
+              <div class="todo-context">
+                <p>
+                  Click on the button with plus to create a new todo, <br />
+                  You can enter your description here. <br />
+                  click on delete to delete the todos you don't need anymore.
+                </p>
+              </div>
+              <div class="todo-created">
+                <p class="date-create">25/02/2023</p>
+                <div class="todo-button">
+                  <button class="trash-todo"><span>🗑</span> Delete</button>
+                </div>
+              </div>
+            </div>
+            <div class="todo-item">
+              <div class="todo-title">
+                <h3>your task goes in the title</h3>
+              </div>
+              <div class="todo-context">
+                <p>
+                  Click on the button with plus to create a new todo, <br />
+                  You can enter your description here. <br />
+                  click on delete to delete the todos you don't need anymore.
+                </p>
+              </div>
+              <div class="todo-created">
+                <p class="date-create">25/02/2023</p>
+                <div class="todo-button">
+                  <button class="trash-todo"><span>🗑</span> Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overlay">
+          <div class="form-containaer">
+            <button class="close-overlay">x</button>
+            <section class="form-overlay">
+              <input
+                type="text"
+                name="title"
+                placeholder="Enter your title"
+                class="overlay-input"
+              />
+              <textarea
+                name="todos"
+                rows="8"
+                placeholder="Enter your task description here"
+                class="overlay-text"
+                required
+              ></textarea>
+              <div class="todo-controls">
+                <button class="cancel-btn">CANCEL</button>
+                <button class="submit-btn">SUBMIT</button>
+              </div>
+            </section>
+          </div>
+        </div>
+        <footer>
+          <button class="add-btn">+</button>
+        </footer>
+      </div>
+    </main>
+
+    <!-- javscript links -->
+    <script src="index.js"></script>
+    <script src="todo-data.js"></script>
+  </body>
+</html>
